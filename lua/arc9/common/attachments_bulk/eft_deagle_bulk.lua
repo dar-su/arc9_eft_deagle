@@ -35,11 +35,12 @@ ATT.Attachments = {
     },    
     {
         PrintName = "Optic",
-        Category = "eft_optic_micro",
-        Pos = Vector(0, 1.67, -1.38),
+        Category = {"eft_optic_small", "eft_reapir", "eft_optic_prism"},
+        RejectAttachments = { ["eft_optic_boss"] = true, ["eft_optic_pk120"] = true, },
+        Pos = Vector(0, 2.2, -1.38),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
-        ExtraSightDistance = 8
+        ExtraSightDistance = 6.5
     },
 }
 
@@ -79,11 +80,12 @@ ATT.Attachments = {
     },    
     {
         PrintName = "Optic",
-        Category = "eft_optic_micro",
-        Pos = Vector(0, 1.67, -1.38),
+        Category = {"eft_optic_small", "eft_reapir", "eft_optic_prism"},
+        RejectAttachments = { ["eft_optic_boss"] = true, ["eft_optic_pk120"] = true, },
+        Pos = Vector(0, 2.2, -1.38),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
-        ExtraSightDistance = 8
+        ExtraSightDistance = 6.5
     },
 }
 
@@ -121,11 +123,19 @@ ATT.Attachments = {
     },    
     {
         PrintName = "Optic",
-        Category = "eft_optic_micro",
-        Pos = Vector(0, 1.67, -1.38),
+        Category = {"eft_optic_medium",  "eft_optic_small", "eft_reapir", "eft_optic_prism"},
+        RejectAttachments = { 
+            ["eft_optic_boss"] = true, 
+            ["eft_optic_pk120"] = true, 
+            ["eft_optic_553"] = true, 
+            ["eft_optic_okp7"] = true, 
+            ["eft_optic_kobra"] = true, 
+            ["eft_optic_krechet"] = true,
+            ["eft_mount_t1sun"] = true },
+        Pos = Vector(0, 2.2, -1.38),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
-        ExtraSightDistance = 8
+        ExtraSightDistance = 6.5
     },
 }
 
@@ -163,11 +173,19 @@ ATT.Attachments = {
     },    
     {
         PrintName = "Optic",
-        Category = "eft_optic_micro",
-        Pos = Vector(0, 1.67, -1.38),
+        Category = {"eft_optic_medium",  "eft_optic_small", "eft_reapir", "eft_optic_prism"},
+        RejectAttachments = { 
+            ["eft_optic_boss"] = true, 
+            ["eft_optic_pk120"] = true, 
+            ["eft_optic_553"] = true, 
+            ["eft_optic_okp7"] = true, 
+            ["eft_optic_kobra"] = true, 
+            ["eft_optic_krechet"] = true,
+            ["eft_mount_t1sun"] = true },
+        Pos = Vector(0, 2.2, -1.38),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
-        ExtraSightDistance = 8
+        ExtraSightDistance = 6.5
     },
 }
 
@@ -413,8 +431,9 @@ ATT.DistantShootSoundIndoor = path .. "de357_indoor_distant.ogg"
 ATT.ActivateElements = {"eft_slide_deagle_l5_357"}
 ATT.Category = {"eft_deagle_slide_l5"}
 
-ATT.RecoilMult = 0.6
-ATT.VisualRecoilMult = 0.6
+ATT.RecoilMult = 0.33
+ATT.VisualRecoilMult = 0.4
+ATT.VisualRecoilPositionBumpUpMult = 0.3
 
 ATT.Attachments = {
     {
@@ -450,6 +469,9 @@ ATT.Description = [[An L6 slide for the Desert Eagle pistol, manufactured by Mag
 
 ATT.EFTErgoAdd = 4
 ATT.CustomPros = { Ergonomics = "+4" }
+
+ATT.VisualRecoilMult = 1.1
+ATT.VisualRecoilPositionBumpUpMult = 1.1
 
 ATT.HasSlide = true 
 ATT.SortOrder = 0

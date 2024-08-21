@@ -138,18 +138,18 @@ SWEP.Firemodes = { { Mode = 1 } }
 
 SWEP.Recoil = 3 -- general multiplier of main recoil
 
-SWEP.RecoilUp   = 1   -- up recoil
+SWEP.RecoilUp   = 2.25   -- up recoil
 SWEP.RecoilSide = 0.5 -- sideways recoil
-SWEP.RecoilRandomUp   = 0.2 -- random up/down
+SWEP.RecoilRandomUp   = 0.5 -- random up/down
 SWEP.RecoilRandomSide = 0.2   -- random left/right
 
-SWEP.RecoilAutoControl = 10 -- autocompenstaion, could be cool if set to high but it also affects main recoil
+SWEP.RecoilAutoControl = 4 -- autocompenstaion, could be cool if set to high but it also affects main recoil
 
 -- visual recoil   aka visrec
 SWEP.VisualRecoil = 3 -- general multiplier for it
 
-local EFT_VisualRecoilUp_BURST_SEMI   = 5.5   -- up/down tilt when semi/bursts
-SWEP.VisualRecoilUp                   = 5.5   --   when fullautoing
+local EFT_VisualRecoilUp_BURST_SEMI   = 4.0   -- up/down tilt when semi/bursts
+SWEP.VisualRecoilUp                   = 4.0   --   when fullautoing
 local EFT_VisualRecoilSide_BURST_SEMI = 0.001 -- left/right tilt when semi/burst
 SWEP.VisualRecoilSide                 = 0.005   --   when fullautoing
 SWEP.VisualRecoilRoll = 4 -- roll tilt, a visual thing
@@ -161,11 +161,11 @@ SWEP.VisualRecoilDampingConst = 600  -- spring settings, this is speed of visrec
 SWEP.VisualRecoilSpringPunchDamping = 10 -- the less this is the more wobbly gun moves
 SWEP.VisualRecoilSpringMagnitude = 2 -- some third element of spring, high values make gun shake asf on low fps
 
-SWEP.VisualRecoilPositionBumpUpHipFire = -0.5 -- gun will go down each shot by this value
-SWEP.VisualRecoilPositionBumpUp = -0.31 -- same but in sights
+SWEP.VisualRecoilPositionBumpUpHipFire = -0.3 -- gun will go down each shot by this value
+SWEP.VisualRecoilPositionBumpUp = -0.4 -- same but in sights
 SWEP.VisualRecoilPositionBumpUpRTScope = 0.05 -- same but in rt scopes, you probably should keep it same as sight value, i guess it doesn't matter anymore after recoil update
 
-SWEP.VisualRecoilCenter = Vector(2, 20, 2) -- ugh, i dont now what to set it too, but probably it should be diffferent on each gun
+SWEP.VisualRecoilCenter = Vector(2, 17, 1) -- ugh, i dont now what to set it too, but probably it should be diffferent on each gun
 -- SWEP.VisualRecoilCenterHipFire = Vector(2, 25, 2)
 local EFT_ShotsToSwitchToFullAutoBehaviur = 2 -- how many shots for switch to fullauto stats from semi/burst, + 2 shots afterwards are lerping. you probably should not touch this but ok
 
@@ -173,7 +173,7 @@ SWEP.RecoilKick = 0.25 -- camera roll each shot + makes camera go more up when f
 
 -- dont touch this i guess
 
-SWEP.RecoilMultHipFire = 1
+SWEP.RecoilMultHipFire = 0.5
 SWEP.RecoilMultCrouch = 0.75
 SWEP.RecoilUpMultFirstShot = 1
 SWEP.RecoilUpMultRecoil = 1
@@ -200,9 +200,9 @@ SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount, self)
     up = Lerp(fullauto, EFT_VisualRecoilUp_BURST_SEMI, up)
     side = Lerp(fullauto, EFT_VisualRecoilSide_BURST_SEMI, side)
 
-    -- if recamount < 2 then
-    --     if self:GetSightAmount() < 0.2 then up = 3 end -- only for visual when hipfiring
-    -- end
+    if recamount < 2 then
+        if self:GetSightAmount() < 0.2 then up = up*2 end -- only for visual when hipfiring
+    end
 
     return up, side, roll, punch
 end
@@ -890,11 +890,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         Bone = "mod_tactical",
-        Category = {"eft_tactical_pistol"},
+        Category = {"eft_tactical"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
-        ExcludeElements = {"eft_xix"}
+        ExcludeElements = {"eft_xix", "eft_l5"}
     },
     {
         PrintName = "Custom slot",
