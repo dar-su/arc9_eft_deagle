@@ -223,11 +223,19 @@ ATT.Attachments = {
     },    
     {
         PrintName = "Optic",
-        Category = "eft_optic_micro",
-        Pos = Vector(0, 1.67, -1.38),
+        Category = {"eft_optic_medium",  "eft_optic_small", "eft_reapir", "eft_optic_prism"},
+        RejectAttachments = { 
+            ["eft_optic_boss"] = true, 
+            ["eft_optic_pk120"] = true, 
+            ["eft_optic_553"] = true, 
+            ["eft_optic_okp7"] = true, 
+            ["eft_optic_kobra"] = true, 
+            ["eft_optic_krechet"] = true,
+            ["eft_mount_t1sun"] = true },
+        Pos = Vector(0, 2.2, -1.38),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
-        ExtraSightDistance = 8
+        ExtraSightDistance = 6.5
     },
 }
 
