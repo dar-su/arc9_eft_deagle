@@ -442,6 +442,8 @@ ATT.Category = {"eft_deagle_slide_l5"}
 ATT.RecoilMult = 0.33
 ATT.VisualRecoilMult = 0.4
 ATT.VisualRecoilPositionBumpUpMult = 0.3
+ATT.VisualRecoilDampingConst = 65
+ATT.RecoilKickMult = 0.75
 
 ATT.Attachments = {
     {
