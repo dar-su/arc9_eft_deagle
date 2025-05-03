@@ -7,10 +7,10 @@ SWEP.Base = "arc9_eft_deagle_l6"
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - Escape From Tarkov"
 
-SWEP.PrintName = "Desert Eagle L5"
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_deaglel5357")
 SWEP.DefaultBodygroups = "12000000000000"
 
-SWEP.Description = [[Desert Eagle L5 is the lightweight modification of the .357 Magnum caliber sport-hunting pistol. This pistol is huge, heavy and not the most practical in operation, but at the same time it is an absolutely unique short-barreled weapon, which undoubtedly became a frequent visitor in video games for its brutal appearance and impressive size. The Desert Eagle did not win any military approval, but deservedly became one of the most famous pistols in the world. Manufactured by Magnum Research.]]
+SWEP.Description = "eft_weapon_deaglel5357_desc"
 
 SWEP.DefaultElements = {"eft_l5"} -- owo
 

@@ -5,24 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_pd20", "Blicky", "en")
-ARC9:AddPhrase("eft_weapon_pd20", "Пестик", "ru")
-ARC9:AddPhrase("eft_weapon_pd20", "Bwiky :p", "uwu")
-ARC9:AddPhrase("eft_weapon_pd20_class", "Toy gun", "en")
-ARC9:AddPhrase("eft_weapon_pd20_class", "Игрушечный пистолет", "ru")
-ARC9:AddPhrase("eft_weapon_pd20_class", "Tooy guwun", "uwu")
 SWEP.PrintName = ARC9:GetPhrase("eft_weapon_pd20")
-SWEP.Description = [[A plastic semi-automatic toy gun firing 20x1mm disks. Designed for children over 5 years old. Manufactured in the USSR.]]
+SWEP.Description = "eft_weapon_pd20_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_weapon_pd20_class")
+SWEP.Class = "eft_class_weapon_toy"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_pist")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "some toy factory idk",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "20x1mm",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= "toy",
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ussr"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "~1960 ?"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_tarkovtoy",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_20x1",
+    ["eft_trivia_act3"]= "eft_trivia_act_spring",
+    ["eft_trivia_country4"] = "eft_trivia_country_ussr",
+    ["eft_trivia_year5"] = "~1960 ?"
 }
 
 SWEP.StandardPresets = false
