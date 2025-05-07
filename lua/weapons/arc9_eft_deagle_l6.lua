@@ -5,18 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-SWEP.PrintName = "Desert Eagle L6"
-SWEP.Description = [[Desert Eagle L6 is the modification of the .50 Action Express caliber sport-hunting pistol. This pistol is huge, heavy and not the most practical in operation, but at the same time it is an absolutely unique short-barreled weapon, which undoubtedly became a frequent visitor in video games for its brutal appearance and impressive size. The Desert Eagle did not win any military approval, but deservedly became one of the most famous pistols in the world. Manufactured by Magnum Research.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_deaglel6")
+SWEP.Description = "eft_weapon_deaglel6_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_pist")
+SWEP.Class = "eft_class_weapon_pist"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_pist")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "Magnum Research",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = ".50 Action Express",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_gas"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_usa"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "2013 ?"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_magnumresearch",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_50ae",
+    ["eft_trivia_act3"]= "eft_trivia_act_gas",
+    ["eft_trivia_country4"] = "eft_trivia_country_usa",
+    ["eft_trivia_year5"] = "2013 ?"
 }
 
 SWEP.StandardPresets = false
@@ -154,6 +154,21 @@ SWEP.MuzzleParticle = "muzzleflash_pistol_deagle" -- Used for some muzzle effect
 SWEP.ShellModel = "models/weapons/arc9/darsu_eft/shells/50ae.mdl"
 SWEP.ShellCorrectAng = Angle(0, 180, 180)
 SWEP.ShellSounds = ARC9EFT.ShellsHeavy
+
+SWEP.HookP_NameChange = function(self, name)
+    local elements = self:GetElements()
+
+    if elements["eft_slide_deagle_l6_wts"] then return ARC9:GetPhrase("eft_weapon_deaglel6wts_alt") end
+    if elements["eft_slide_deagle_l5"] then return ARC9:GetPhrase("eft_weapon_deaglel550ae_alt") end
+    if elements["eft_slide_deagle_l5_357"] then return ARC9:GetPhrase("eft_weapon_deaglel5357_alt") end
+end
+
+SWEP.HookP_DescriptionChange = function(self, desc)
+    local elements = self:GetElements()
+
+    if elements["eft_slide_deagle_l6_wts"] then return "eft_weapon_deaglel6wts_desc" end
+    if elements["eft_slide_deagle_l5"] then return "eft_weapon_deaglel550ae_desc" end
+end
 
 ------------------------- |||           Sounds            ||| -------------------------
 
@@ -662,7 +677,7 @@ SWEP.Attachments = {
         PrintName = "Ammunition",
         Category = "eft_ammo_50ae",
         Bone = "mod_magazine",
-        Integral = true,
+        Integral = "eft_ammo_50ae_fmj",
         Installed = "eft_ammo_50ae_fmj",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
